@@ -4,7 +4,7 @@ En modernisering av HandRehab Göteborgs befintliga webbplats. Målet är att sk
 
 ## Livedemo
 
-[Besök webbplatsen](LÄGG-IN-LÄNK-HÄR)
+[Besök webbplatsen](https://h4nn4s.github.io/handrehab/)
 
 *Webbplatsen är under utveckling.*
 
