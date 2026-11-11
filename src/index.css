@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
 
 :root {
   /* Colors */
@@ -19,6 +19,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lora", serif;
+  font-weight: 400;
 }
 
 * {
@@ -44,6 +54,40 @@ body {
 button,
 a {
   font: inherit;
+}
+
+button,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 24px;
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+  appearance: none;
+  background: transparent;
+  color: var(--color-primary);
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+button:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+}
+
+.button--arrow::after {
+  content: "→";
+  margin-left: 10px;
+  transition: transform 0.2s ease;
+}
+
+.button--arrow:hover::after {
+  transform: translateX(4px);
 }
 
 /* Header */
@@ -104,8 +148,9 @@ a {
 
 .hero h1 {
   grid-column: 1;
+  align-self: start;
   margin: 0;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 4vw, 3rem);
   line-height: 1.1;
 }
 
@@ -120,23 +165,6 @@ a {
 .hero-button {
   grid-column: 1;
   justify-self: start;
-  padding: 12px 24px;
-  border: 1px solid var(--color-primary);
-  border-radius: 4px;
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  font-weight: 600;
-  text-decoration: none;
-  transition: filter 0.2s ease;
-}
-
-.hero-button:hover {
-  filter: brightness(0.9);
-}
-
-.hero-button:focus-visible {
-  outline: 2px solid var(--color-text);
-  outline-offset: 4px;
 }
 
 .hero::after {
@@ -208,6 +236,7 @@ a {
   .intro-section {
     grid-template-columns: minmax(0, 1fr);
   }
+
 }
 
 @media (max-width: 420px) {
@@ -217,19 +246,22 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .navigation a,
-  .hero-button {
+  .button--arrow::after {
     transition: none;
   }
 }
 
 .page-layout {
-  min-height: 60vh;
-  padding: clamp(48px, 8vw, 96px) 6%;
+  padding: clamp(12px, 1.5vw, 20px) 6%;
   background-color: var(--color-background);
 }
 
 .page-layout-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.5vw, 18px);
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
@@ -240,6 +272,79 @@ a {
   color: var(--color-text);
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.2;
+}
+
+.services-intro {
+  max-width: 760px;
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.services-list-section h2 {
+  margin: 0 0 12px;
+  color: var(--color-text);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 48px;
+  row-gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services-list li {
+  position: relative;
+  padding: 10px 0 10px 28px;
+  border-bottom: 1px solid var(--color-primary-light);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.services-list li::before {
+  position: absolute;
+  top: 17px;
+  left: 2px;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  content: "";
+}
+
+@media (max-width: 760px) {
+  .services-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.services-contact {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  margin-top: 0;
+  padding: clamp(20px, 2.5vw, 28px);
+  background-color: var(--color-primary-light);
+}
+
+.services-contact h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(1.25rem, 2vw, 1.1rem);
+}
+
+@media (max-width: 760px) {
+  .services-contact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }
 
 .footer {
@@ -287,7 +392,7 @@ a {
   overflow-wrap: anywhere;
 }
 
-.footer-contact-list li + li::before {
+.footer-contact-list li+li::before {
   content: "";
   height: 1em;
   margin: 0 12px;
