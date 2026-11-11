@@ -4,8 +4,9 @@ function Hero() {
       <h1 id="hero-title">Specialist på handrehabilitering</h1>
       <p className="hero-description">
         HandRehab Göteborg specialiserar i rehabilitering/behandling av hand, handled och armskador.
+        <br /><br />HandRehab Göteborg har avtal med Euro Accident, Länsförsäkring, Skandia, och samarbetar med de flesta försäkringsbolag.
       </p>
-      <a className="hero-button" href="#kontakt">
+      <a className="button hero-button" href="#kontakt">
         Kontakta oss
       </a>
     </section>
