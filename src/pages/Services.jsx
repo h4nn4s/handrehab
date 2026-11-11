@@ -2,17 +2,17 @@ import { Link } from "react-router-dom";
 import PageLayout from "../components/PageLayout";
 
 const services = [
-  "Handrehabilitering",
-  "Arbetsterapi",
-  "Handträning",
-  "Orteser och individuella hjälpmedel",
+  "Handfunktionsbedömningar",
+  "Tillverkning av statiska och dynamiska ortoser",
+  "Utprovning av prefabricerade ortoser",
+  "Ödem- kompressionsbehandling av svullnad",
+  "Patient-/diagnosanpassade rörelse- och styrketräningsprogram",
   "Ärrbehandling",
-  "Smärtrehabilitering",
-  "Behandling vid överbelastningsbesvär",
-  "Rehabilitering efter operation",
-  "Stöd vid nervskador",
-  "Råd och anpassningar i vardag och arbete",
-  "Uppföljning och omhändertagande",
+  "Sensibilitetsträning",
+  "Desensibilitetsträning/härdning",
+  "Råd om ergomoni och hjälpmedel",
+  "TENS/NMES",
+  "Ledmobilisering"
 ];
 
 function Services() {
