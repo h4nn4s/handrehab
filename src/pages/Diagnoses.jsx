@@ -1,8 +1,8 @@
+import PageLayout from "../components/PageLayout";
+
 function Diagnoses() {
   return (
-    <main>
-      <h1>Diagnoser</h1>
-    </main>
+    <PageLayout title="Diagnoser" />
   );
 }
 

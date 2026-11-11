@@ -1,8 +1,8 @@
+import PageLayout from "../components/PageLayout";
+
 function Contact() {
   return (
-    <main>
-      <h1>Kontakt</h1>
-    </main>
+    <PageLayout title="Kontakt" />
   );
 }
 

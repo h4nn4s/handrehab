@@ -1,8 +1,8 @@
+import PageLayout from "../components/PageLayout";
+
 function About() {
   return (
-    <main>
-      <h1>Om oss</h1>
-    </main>
+    <PageLayout title="Om oss" />
   );
 }
 

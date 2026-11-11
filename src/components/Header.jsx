@@ -1,10 +1,12 @@
+import { NavLink } from "react-router-dom";
+
 const navigationItems = [
-  "Hem",
-  "Tjänster",
-  "Om oss",
-  "Diagnoser",
-  "Referenser & länkar",
-  "Kontakt",
+  { label: "Hem", path: "/", end: true },
+  { label: "Tjänster", path: "/tjanster" },
+  { label: "Om oss", path: "/om-oss" },
+  { label: "Diagnoser", path: "/diagnoser" },
+  { label: "Referenser & länkar", path: "/referenser" },
+  { label: "Kontakt", path: "/kontakt" },
 ];
 
 function Header() {
@@ -13,15 +15,15 @@ function Header() {
       <div className="header-logo">HandRehab Göteborg</div>
 
       <nav className="navigation" aria-label="Huvudmeny">
-        {navigationItems.map((item) => (
-          <a
-            href="#"
-            key={item}
-            className={item === "Hem" ? "active" : undefined}
-            aria-current={item === "Hem" ? "page" : undefined}
+        {navigationItems.map(({ label, path, end }) => (
+          <NavLink
+            to={path}
+            key={path}
+            end={end}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
           >
-            {item}
-          </a>
+            {label}
+          </NavLink>
         ))}
       </nav>
     </header>

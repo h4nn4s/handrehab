@@ -1,8 +1,8 @@
+import PageLayout from "../components/PageLayout";
+
 function References() {
   return (
-    <main>
-      <h1>Referenser &amp; länkar</h1>
-    </main>
+    <PageLayout title="Referenser & länkar" />
   );
 }
 
