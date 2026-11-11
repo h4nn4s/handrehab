@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 function App() {
   return (
@@ -6,10 +7,7 @@ function App() {
       <Header />
 
       <main>
-        <section>
-          <h1>HandRehab Göteborg</h1>
-          <p>Specialist på handrehabilitering</p>
-        </section>
+        <Hero />
       </main>
 
       <footer>
