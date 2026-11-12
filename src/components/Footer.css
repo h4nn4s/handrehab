@@ -19,6 +19,7 @@
 .footer-title {
   margin: 0;
   color: var(--color-text);
+  font-family: 'Source Sans 3', sans-serif;
   font-size: 1.25rem;
 }
 
