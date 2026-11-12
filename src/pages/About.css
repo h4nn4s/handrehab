@@ -1,0 +1,28 @@
+/* About page */
+.about-hero {
+  padding-top: clamp(12px, 1.5vw, 20px);
+  padding-right: max(6%, calc((100% - 1120px) / 2));
+  padding-left: max(6%, calc((100% - 1120px) / 2));
+}
+
+.about-hero::after {
+  content: none;
+}
+
+.about-hero-image {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 100%;
+  height: clamp(280px, 35vw, 460px);
+  border-radius: 8px;
+  background-color: var(--color-primary-light);
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .about-hero-image {
+    grid-column: 1;
+    grid-row: 3;
+    height: 240px;
+  }
+}

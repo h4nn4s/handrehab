@@ -1,3 +1,4 @@
+import "./About.css";
 import heroImage from "../assets/hero.png";
 
 function About() {
