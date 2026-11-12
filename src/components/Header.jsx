@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const navigationItems = [
   { label: "Hem", path: "/", end: true },
-  { label: "Tjänster", path: "/tjanster" },
   { label: "Om oss", path: "/om-oss" },
+  { label: "Tjänster", path: "/tjanster" },
   { label: "Diagnoser", path: "/diagnoser" },
   { label: "Referenser & länkar", path: "/referenser" },
   { label: "Kontakt", path: "/kontakt" },
@@ -12,8 +13,10 @@ const navigationItems = [
 function Header() {
   return (
     <header className="header">
-      <div className="header-logo">HandRehab Göteborg</div>
-
+      <Link to="/" className="header-logo">
+        HandRehab Göteborg
+      </Link>
+      
       <nav className="navigation" aria-label="Huvudmeny">
         {navigationItems.map(({ label, path, end }) => (
           <NavLink

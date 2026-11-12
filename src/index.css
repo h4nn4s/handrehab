@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
   /* Colors */
@@ -51,6 +51,7 @@ body {
   flex: 1;
 }
 
+/* Buttons */
 button,
 a {
   font: inherit;
@@ -65,13 +66,19 @@ button,
   border: 1px solid var(--color-primary);
   border-radius: 999px;
   appearance: none;
-  background: transparent;
+  background-color: transparent;
   color: var(--color-primary);
   font-family: 'Source Sans 3', sans-serif;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.5;
   text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+button:hover,
+.button:hover {
+  background-color: var(--color-primary-light);
 }
 
 button:focus-visible,
@@ -83,6 +90,8 @@ button:focus-visible,
 .button--arrow::after {
   content: "→";
   margin-left: 10px;
+  position: relative;
+  top: 1px;
   transition: transform 0.2s ease;
 }
 
@@ -101,7 +110,9 @@ button:focus-visible,
 
 .header-logo {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 400;
+  color: var(--color-text-light);
+  text-decoration: none;
 }
 
 .navigation {
@@ -120,7 +131,7 @@ button:focus-visible,
 }
 
 .navigation a:hover {
-  color: var(--color-text-light);
+  color: var(--color-accent);
 }
 
 .navigation a.active,
@@ -146,6 +157,12 @@ button:focus-visible,
   background-color: var(--color-background);
 }
 
+.about-hero {
+  padding-top: clamp(12px, 1.5vw, 20px);
+  padding-right: max(6%, calc((100% - 1120px) / 2));
+  padding-left: max(6%, calc((100% - 1120px) / 2));
+}
+
 .hero h1 {
   grid-column: 1;
   align-self: start;
@@ -162,6 +179,10 @@ button:focus-visible,
   line-height: 1.6;
 }
 
+.hero-description em {
+  font-style: italic !important;
+}
+
 .hero-button {
   grid-column: 1;
   justify-self: start;
@@ -174,6 +195,20 @@ button:focus-visible,
   min-height: clamp(280px, 35vw, 460px);
   border-radius: 8px;
   background-color: var(--color-primary-light);
+}
+
+.about-hero::after {
+  content: none;
+}
+
+.about-hero-image {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 100%;
+  height: clamp(280px, 35vw, 460px);
+  border-radius: 8px;
+  background-color: var(--color-primary-light);
+  object-fit: contain;
 }
 
 .intro-section {
@@ -233,10 +268,15 @@ button:focus-visible,
     min-height: 240px;
   }
 
+  .about-hero-image {
+    grid-column: 1;
+    grid-row: 3;
+    height: 240px;
+  }
+
   .intro-section {
     grid-template-columns: minmax(0, 1fr);
   }
-
 }
 
 @media (max-width: 420px) {
@@ -248,11 +288,14 @@ button:focus-visible,
 @media (prefers-reduced-motion: reduce) {
 
   .navigation a,
+  button,
+  .button,
   .button--arrow::after {
     transition: none;
   }
 }
 
+/* Page layout */
 .page-layout {
   padding: clamp(12px, 1.5vw, 20px) 6%;
   background-color: var(--color-background);
@@ -288,6 +331,12 @@ button:focus-visible,
   font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
+.references-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+}
+
 .services-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -296,6 +345,27 @@ button:focus-visible,
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.references-list {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.references-list a {
+  color: var(--color-accent);
+  text-decoration: none;
+  text-underline-offset: 4px;
+  transition: text-decoration 0.2s ease;
+}
+
+.references-list a:hover {
+  text-decoration: underline;
+}
+
+.references-list a:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .services-list li {
@@ -318,11 +388,17 @@ button:focus-visible,
 }
 
 @media (max-width: 760px) {
+  .references-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
   .services-list {
     grid-template-columns: minmax(0, 1fr);
   }
 }
 
+/* Services contact */
 .services-contact {
   display: flex;
   align-items: center;
@@ -336,7 +412,7 @@ button:focus-visible,
 .services-contact h2 {
   margin: 0;
   color: var(--color-text);
-  font-size: clamp(1.25rem, 2vw, 1.1rem);
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
 }
 
 @media (max-width: 760px) {
@@ -347,6 +423,7 @@ button:focus-visible,
   }
 }
 
+/* Footer */
 .footer {
   padding: 20px 6%;
   border-top: 1px solid var(--color-primary-light);

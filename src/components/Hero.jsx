@@ -1,14 +1,16 @@
+import { Link } from "react-router-dom";
+
 function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Specialist på handrehabilitering</h1>
+      <h1 id="hero-title">Välkommen</h1>
       <p className="hero-description">
         HandRehab Göteborg specialiserar i rehabilitering/behandling av hand, handled och armskador.
-        <br /><br />HandRehab Göteborg har avtal med Euro Accident, Länsförsäkring, Skandia, och samarbetar med de flesta försäkringsbolag.
+        <br /><br />HandRehab Göteborg har avtal med Euro Accident, Länsförsäkring samt Skandia och samarbetar med de flesta försäkringsbolag.
       </p>
-      <a className="button hero-button" href="#kontakt">
+      <Link className="button button--arrow hero-button" to="/kontakt">
         Kontakta oss
-      </a>
+      </Link>
     </section>
   );
 }
