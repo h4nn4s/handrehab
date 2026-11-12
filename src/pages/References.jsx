@@ -1,4 +1,4 @@
-
+import "./References.css";
 import PageLayout from "../components/PageLayout";
 
 const references = [

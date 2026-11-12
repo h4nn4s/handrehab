@@ -1,0 +1,35 @@
+
+/* References */
+.references-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+}
+
+.references-list {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.references-list a {
+  color: var(--color-accent);
+  text-decoration: none;
+  text-underline-offset: 4px;
+  transition: text-decoration 0.2s ease;
+}
+
+.references-list a:hover {
+  text-decoration: underline;
+}
+
+.references-list a:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (max-width: 760px) {
+  .references-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}

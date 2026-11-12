@@ -1,3 +1,5 @@
+import "./PageLayout.css";
+
 function PageLayout({ title, children, className = "" }) {
   return (
     <main className={`page-layout ${className}`}>

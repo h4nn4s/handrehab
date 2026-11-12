@@ -1,3 +1,5 @@
+import "./IntroSection.css";
+
 function IntroSection() {
   return (
     <section className="intro-section" aria-labelledby="intro-section-title">

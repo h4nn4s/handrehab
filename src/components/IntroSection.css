@@ -1,0 +1,40 @@
+
+/* Intro section */
+.intro-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  padding: clamp(48px, 7vw, 88px) 6%;
+  background-color: var(--color-white);
+}
+
+.intro-section-content {
+  max-width: 520px;
+}
+
+.intro-section-content h2 {
+  margin: 0 0 20px;
+  color: var(--color-text);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.intro-section-description {
+  margin: 0;
+  color: var(--color-text-light);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.intro-section-image {
+  min-height: clamp(260px, 32vw, 420px);
+  border-radius: 8px;
+  background-color: var(--color-primary-light);
+}
+
+@media (max-width: 760px) {
+  .intro-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
