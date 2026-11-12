@@ -16,13 +16,6 @@
   margin: 0;
   font-size: clamp(2.5rem, 4vw, 3rem);
   line-height: 1.1;
-  
-}
-
-/* tillfälliga justeringar av hero-innehåll
-   behöver ses över när slutgiltiga texter + innehåll är på plats */
-.hero:not(.about-hero) h1 {
-  align-self: center;
 }
 
 .hero-description {
@@ -34,11 +27,11 @@
 }
 
 .hero:not(.about-hero) h1 {
-  transform: translateY(54px);
+  animation: page-fade-in 1200ms ease-out 100ms both;
 }
 
 .hero:not(.about-hero) .hero-description {
-  transform: translateY(-12px);
+  animation: page-fade-in 1600ms ease-out 500ms both;
 }
 
 .hero-button {
@@ -55,10 +48,6 @@
   background-color: var(--color-primary-light);
 }
 
-.hero:not(.about-hero) .hero-button {
-  transform: translateY(-52px);
-}
-
 @media (max-width: 760px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
@@ -68,5 +57,12 @@
     grid-column: 1;
     grid-row: 4;
     min-height: 240px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero:not(.about-hero) h1,
+  .hero:not(.about-hero) .hero-description {
+    animation: none;
   }
 }
