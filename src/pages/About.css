@@ -1,12 +1,13 @@
 /* About page */
-.about-hero {
+.hero.about-hero {
   padding-top: clamp(12px, 1.5vw, 20px);
   padding-right: max(6%, calc((100% - 1120px) / 2));
   padding-left: max(6%, calc((100% - 1120px) / 2));
 }
 
-.about-hero h1 {
+.hero.about-hero h1 {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.2;
 }
 
 .about-hero::after {

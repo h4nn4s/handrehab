@@ -14,7 +14,7 @@
   color: var(--color-accent);
   text-decoration: none;
   text-underline-offset: 4px;
-  transition: text-decoration 0.2s ease;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 .references-list a:hover {

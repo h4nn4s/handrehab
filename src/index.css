@@ -51,10 +51,28 @@ body {
   flex: 1;
 }
 
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.app-content > main {
+  animation: page-fade-in 280ms ease-out both;
+}
+
 /* Buttons */
 button,
 a {
   font: inherit;
+}
+
+a:not(.button) {
+  transition: color 0.2s ease;
 }
 
 button,
@@ -92,9 +110,16 @@ button:focus-visible,
   margin-left: 10px;
   position: relative;
   top: 1px;
-  transition: transform 0.2s ease;
 }
 
-.button--arrow:hover::after {
-  transform: translateX(4px);
+@media (prefers-reduced-motion: reduce) {
+  .app-content > main {
+    animation: none;
+  }
+
+  button,
+  a,
+  .button {
+    transition: none;
+  }
 }
