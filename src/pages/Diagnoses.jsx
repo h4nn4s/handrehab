@@ -22,7 +22,7 @@ const diagnoses = [
 function Diagnoses() {
   return (
     <PageLayout title="Diagnoser">
-      <p className="services-intro">Det finns många olika sjukdomar och skador som kan påverka funktion i hand/arm. För att få den rätta behandling är det viktig att få den rätt ställda diagnosen.</p>
+      <p className="page-intro">Det finns många olika sjukdomar och skador som kan påverka funktion i hand/arm. För att få den rätta behandling är det viktig att få den rätt ställda diagnosen.</p>
 
       <section
         className="services-list-section"

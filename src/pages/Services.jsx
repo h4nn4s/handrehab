@@ -18,7 +18,7 @@ const services = [
 function Services() {
   return (
     <PageLayout title="Tjänster" className="services-page">
-      <p className="services-intro">
+      <p className="page-intro">
         Behandling av hand-arm skador krävs en fördjupad kunskap i armens anatomi och fysiologi samt kreativitet och fingertoppskänsla vid tillverkning av ortoser.
       </p>
 
