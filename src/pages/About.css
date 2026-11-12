@@ -5,6 +5,10 @@
   padding-left: max(6%, calc((100% - 1120px) / 2));
 }
 
+.about-hero h1 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
 .about-hero::after {
   content: none;
 }
