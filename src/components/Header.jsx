@@ -1,6 +1,7 @@
+
 import "./Header.css";
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import logo from "../assets/logo-org.png";
 
 const navigationItems = [
   { label: "Hem", path: "/", end: true },
@@ -15,9 +16,10 @@ function Header() {
   return (
     <header className="header">
       <Link to="/" className="header-logo">
-        HandRehab Göteborg
+        <img src={logo} alt="" className="header-logo-image" />
+        <span>HandRehab Göteborg</span>
       </Link>
-      
+
       <nav className="navigation" aria-label="Huvudmeny">
         {navigationItems.map(({ label, path, end }) => (
           <NavLink
