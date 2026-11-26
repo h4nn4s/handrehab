@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
-  /* Colors */
+  /* colors */
   --color-primary: #7199B2;
   --color-primary-light: #DCE9F0;
   --color-accent: #5D8EAA;
@@ -10,7 +10,7 @@
   --color-text: #333333;
   --color-text-light: #666666;
 
-  /* Typography */
+  /* typography */
   font-family: 'Source Sans 3', sans-serif;
   color: var(--color-text);
   background-color: var(--color-background);
@@ -19,6 +19,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --background-logo: url("./assets/logo-white.png");
 }
 
 h1,
@@ -42,9 +44,28 @@ body {
 }
 
 .app-layout {
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow: hidden;
+}
+
+.app-layout::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  top: 28vh;
+  right: -8%;
+  width: clamp(520px, 65vw, 850px);
+  height: 82vh;
+  background-image: var(--background-logo);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .app-content {
@@ -61,7 +82,7 @@ body {
   }
 }
 
-.app-content > main {
+.app-content>main {
   animation: page-fade-in 280ms ease-out both;
 }
 
@@ -113,7 +134,7 @@ button:focus-visible,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .app-content > main {
+  .app-content>main {
     animation: none;
   }
 

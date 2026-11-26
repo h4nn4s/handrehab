@@ -1,8 +1,6 @@
-
 /* Page layout */
 .page-layout {
   padding: clamp(12px, 1.5vw, 20px) 6%;
-  background-color: var(--color-background);
 }
 
 .page-layout-container {
