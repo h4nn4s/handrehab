@@ -39,10 +39,14 @@
   justify-self: start;
 }
 
-.hero::after {
+.hero:not(.about-hero)::after {
   content: "";
   grid-column: 2;
   grid-row: 1 / span 3;
+}
+
+.hero:not(.about-hero)::after,
+.hero-media {
   min-height: clamp(280px, 35vw, 460px);
   border-radius: 8px;
   background-color: var(--color-primary-light);

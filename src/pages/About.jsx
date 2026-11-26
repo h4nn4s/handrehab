@@ -13,7 +13,7 @@ function About() {
 
         <br /><br />Jag har vidareutbildat mig i handrehabilitering vid Lunds Universitet (15p masters nivå) och har varit delaktig i forskning i bland annat Mallet finger skador, Tumbasartros (CMC-l artelon spacer) och Sentransfereringar hos barn med Cerebral Pares.
       </p>
-      <img className="about-hero-image" src={heroImage} alt="" />
+      <img className="hero-media about-hero-image" src={heroImage} alt="" />
     </main>
   );
 }
